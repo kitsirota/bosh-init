@@ -161,7 +161,7 @@ func (c *DeploymentPreparer) PrepareDeployment(stage biui.Stage) (err error) {
 		extractedStemcell, err = c.stemcellFetcher.GetStemcell(deploymentManifest, stage)
 
 		nonCpiReleasesMap, _ := deploymentManifest.GetListOfTemplateReleases()
-		delete(nonCpiReleasesMap, installationManifest.Template.Release) // remove CPI release from nonCpiReleasesMap
+		//delete(nonCpiReleasesMap, installationManifest.Template.Release) // remove CPI release from nonCpiReleasesMap
 
 		for _, release := range c.releaseManager.List() {
 			if _, ok := nonCpiReleasesMap[release.Name()]; ok {
